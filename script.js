@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const slides = document.querySelectorAll(".slide");
     let currentSlide = 0;
     let currentCover = 1; // Inicia desde la primera capa
+    let carouselStarted = false; // Controla que el carrusel solo inicie una vez
 
     showCover(currentCover); // Muestra la primera capa
 
@@ -30,11 +31,16 @@ document.addEventListener("DOMContentLoaded", function () {
             song.pause();
         }, 300000); 
 
-        showSlide(currentSlide); // Muestra la primera imagen
-        startCarousel(); // Inicia el carrusel
+        if (!carouselStarted) {
+            carouselStarted = true;
+            showSlide(currentSlide); // Muestra la primera imagen
+            startCarousel(); // Inicia el carrusel
+        }
     });
+
     noBtn.addEventListener("mouseover", moveNoButton); // Para computadoras
     noBtn.addEventListener("touchstart", moveNoButton); // Para teléfonos y tablets
+    
     function moveNoButton() {
         const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
         const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
@@ -43,22 +49,21 @@ document.addEventListener("DOMContentLoaded", function () {
         noBtn.style.top = `${y}px`;
     }
 
-
     function showSlide(index) {
         slides.forEach(slide => slide.classList.remove("active"));
         slides[index].classList.add("active");
     }
 
     function startCarousel() {
-    const interval = setInterval(() => {
-        if (currentSlide < slides.length - 1) {
-            currentSlide++;
-            showSlide(currentSlide);
-        } else {
-            clearInterval(interval); // Detiene el carrusel cuando llega a la última imagen
-        }
-    }, 3000); // Cambia cada 3 segundos
-}
+        let interval = setInterval(() => {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                showSlide(currentSlide);
+            } else {
+                clearInterval(interval); // Detiene el carrusel en la última imagen
+            }
+        }, 3000);
+    }
 
     function showCover(level) {
         // Oculta todas las capas
