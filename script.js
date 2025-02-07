@@ -50,11 +50,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function startCarousel() {
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % slides.length;
+    const interval = setInterval(() => {
+        if (currentSlide < slides.length - 1) {
+            currentSlide++;
             showSlide(currentSlide);
-        }, 3000); // Cambia cada 3 segundos
-    }
+        } else {
+            clearInterval(interval); // Detiene el carrusel cuando llega a la última imagen
+        }
+    }, 3000); // Cambia cada 3 segundos
+}
 
     function showCover(level) {
         // Oculta todas las capas
