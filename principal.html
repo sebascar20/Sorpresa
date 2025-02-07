@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SORPRESA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <div id="cover1" class="cover">
+            <h2>¡Tengo algo para ti! 🎁</h2>
+            <button onclick="openNextCover(1)">Abrir</button>
+        </div>
+    
+        <div id="cover2" class="cover">
+            <h2>Pero antes... una sorpresa 💌</h2>
+            <button onclick="openNextCover(2)">Abrir</button>
+        </div>
+    
+        <div id="cover3" class="cover">
+            <h2>¿Estás lista? 😏</h2>
+            <button onclick="openNextCover(3)">Abrir</button>
+        </div>
+    
+        <div id="cover4" class="cover">
+            <h2>Aún no, sigue destapando... 👀</h2>
+            <button onclick="openNextCover(4)">Abrir</button>
+        </div>
+    
+        <div id="cover5" class="cover">
+            <h2>Solo un poco más... ⏳</h2>
+            <button onclick="openNextCover(5)">Abrir</button>
+        </div>
+    
+        <div id="cover6" class="cover">
+            <h2>Ya casi... 😍</h2>
+            <button onclick="openNextCover(6)">Abrir</button>
+        </div>
+    
+        <div id="cover7" class="cover">
+            <h2>¡Última capa, lo prometo! 🎊</h2>
+            <button onclick="openNextCover(7)">Abrir</button>
+        </div>
+    
+        <div id="mainContent" class="container hidden">
+            <h1>¿Quieres ser mi Valentine? ❤️</h1>
+            <div class="button-container">
+                <button id="yesBtn">Sí</button>
+                <button id="noBtn">No</button>
+            </div>
+        </div> 
+
+    <!-- Carrusel de imágenes con música -->
+    <div class="carousel-container" id="carrusel">
+        <audio id="song" loop>
+            <source src="musica/cancion.mp3" type="audio/mpeg">
+        </audio>
+        <div class="carousel">
+            <img src="imagenes/img24.jpg" class="slide">
+            <img src="imagenes/img23.jpg" class="slide">
+            <img src="imagenes/img22.jpg" class="slide">
+            <img src="imagenes/img21.jpg" class="slide">
+            <img src="imagenes/img20.jpg" class="slide">
+            <img src="imagenes/img19.jpg" class="slide">
+            <img src="imagenes/img18.JPG" class="slide">
+            <img src="imagenes/img17.jpg" class="slide">
+            <img src="imagenes/img16.jpg" class="slide">
+            <img src="imagenes/img15.jpg" class="slide">
+            <img src="imagenes/img14.jpg" class="slide">
+            <img src="imagenes/img13.jpg" class="slide">
+            <img src="imagenes/img12.jpg" class="slide">
+            <img src="imagenes/img11.jpg" class="slide">
+            <img src="imagenes/img10.jpg" class="slide">
+            <img src="imagenes/img9.jpg" class="slide">
+            <img src="imagenes/img1.jpg" class="slide">
+            <img src="imagenes/img8.jpg" class="slide">
+            <img src="imagenes/img7.jpg" class="slide">
+            <img src="imagenes/img6.jpg" class="slide">
+            <img src="imagenes/img2.jpg" class="slide">
+            <img src="imagenes/img4.jpg" class="slide">
+            <img src="imagenes/img3.jpg" class="slide">
+            <img src="imagenes/img5.jpg" class="slide">
+            
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

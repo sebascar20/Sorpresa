@@ -1,0 +1,146 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: pink;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Contenedor principal */
+.container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+body {
+    text-align: center;
+    background-color: pink;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos para las coberturas */
+/* Ajustar el z-index para las coberturas */
+.cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 192, 203, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 10; /* Asegura que las capas se superpongan correctamente */
+}
+
+.cover.hidden {
+    z-index: -1; /* Al esconder las capas, las enviamos atrás */
+}
+
+
+.cover button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* Texto de la pregunta */
+h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de botones */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Separa los botones */
+}
+
+/* Botón Sí */
+#yesBtn {
+    background-color: red;
+    color: white;
+    font-size: 22px;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Botón No */
+#noBtn {
+    background-color: gray;
+    color: white;
+    font-size: 22px;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: left 0.3s ease, top 0.3s ease; /* Movimiento más suave */
+}
+
+
+
+/* Carrusel oculto al inicio */
+.carousel-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.carousel {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ahora las imágenes se ajustan sin recortarse */
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* Hace visible el carrusel cuando se activa */
+.carousel-container.active {
+    display: flex;
+}
